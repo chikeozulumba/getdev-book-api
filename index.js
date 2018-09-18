@@ -22,6 +22,4 @@ server.use(passport.session());
 server.use("/auth", auth);
 server.use("/user", passport.authenticate("jwt", { session: false }), user);
 
-server.listen(3000, function(e) {
-  console.log(process.env.PORT);
-});
+server.listen(3000);

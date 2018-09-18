@@ -1,25 +1,38 @@
 const passport = require("passport");
+const bcrypt = require("bcrypt");
 const passportJWT = require("passport-jwt");
 const LocalStrategy = require("passport-local").Strategy;
-const JWTStrategy   = passportJWT.Strategy;
+const JWTStrategy = passportJWT.Strategy;
 const ExtractJWT = passportJWT.ExtractJwt;
 
 const User = require("../models/User");
 passport.use(
   new LocalStrategy(
     {
-      username: "email",
-      password: "password"
+      usernameField: "email",
+      passwordField: "password"
     },
     function(email, password, cb) {
-      return User.findOne({ email, password })
+      return User.findOne({ email: email })
         .then(user => {
           if (!user) {
-            return cb(null, false, { message: "Incorrect email or password." });
+            return cb(null, false, { message: "Email address not assigned." });
+          } else {
+            bcrypt.compare(password, user.password, function(err, res) {
+              if (res === true) {
+                return cb(null, user, { message: "Logged In Successfully" });
+              } else {
+                return cb(null, false, {
+                  message: "Password is incorrect.",
+                  status: 400
+                });
+              }
+            });
           }
-          return cb(null, user, { message: "Logged In Successfully" });
         })
-        .catch(err => cb(err));
+        .catch(err => {
+          console.log(err);
+        });
     }
   )
 );
