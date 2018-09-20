@@ -5,17 +5,18 @@ This an Rest API for a bookstore, with mobile applications in the pipeline. The 
 ## Features
 
 - Authenticated Users can:
-  -- Create a book listing
-  -- Retrieve all book listings
-  -- Retrieve a single book
-  -- Update a book
-  -- Remove a book
-  -- Modify ratings
+
+  - Create a book listing
+  - Retrieve all book listings
+  - Retrieve a single book
+  - Update a book
+  - Remove a book
+  - Modify ratings
 
 - Unauthenticated Users can:
-  -- View all book listings
-  -- View a single book
-  -- Rate a book
+  - View all book listings
+  - View a single book
+  - Rate a book
 
 ## SETUP
 
