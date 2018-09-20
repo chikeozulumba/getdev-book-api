@@ -77,7 +77,11 @@ router.post("/register", function(req, res) {
         }
       })
       .catch(err => {
-        console.log(err);
+        return res.status(400).json({
+          saved: false,
+          message: `An error was encountered!`,
+          error: err
+        });
       });
   } else {
     return res.status(400).json({ validation });

@@ -44,7 +44,7 @@ passport.use(
       secretOrKey: process.env.JWT_SECRET
     },
     function(jwtPayload, cb) {
-      return User.findOneById(jwtPayload.id)
+      return User.findById(jwtPayload._id)
         .then(user => {
           return cb(null, user);
         })

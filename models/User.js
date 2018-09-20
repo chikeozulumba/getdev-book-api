@@ -25,8 +25,10 @@ let userSchema = Schema({
     country: { type: String, required: [true, "Fill in country field."] }
   },
   isAuthorized: { type: Boolean, default: true },
-  joined_date: { type: Date, default: moment().format() },
-  last_login: { type: Date, default: moment().format() },
+  timestamps: {
+    joined_date: { type: Date, default: moment().format() },
+    last_login: { type: Date, default: moment().format() }
+  },
   books: [{ type: Schema.Types.ObjectId, ref: "Books" }]
 });
 
