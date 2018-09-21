@@ -113,6 +113,35 @@ MLAB_PASSWORD=############
 BCRYPT_SALT_ROUNDS=10(default)
 ```
 
-You can change the port for the app default is `3000`.
+You can change the port for the app, although the default is `3000`.
 
 Also to persist the user's data, the default database setup is MongoDB, you can use other databases.
+
+## ENDPOINTS
+
+### Authorization
+
+- Your token is the value of "token" in the json response. This must be included as an Authorization header in all subsequent requests.
+
+  > POST <http://getdev-book-api:3000/v1/auth/login>
+
+Query Parameters:
+
+| Parameters |  Type  |                     Description                     |
+| :--------: | :----: | :-------------------------------------------------: |
+|   Email    | String | The registered email address of the user (required) |
+|   :---:    | :---:  |                        :---:                        |
+|  Password  | String |   The registered password of the user (required)    |
+
+```json
+{
+  "user": { "data": "user" },
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjp7InN0cmVldCI6IjE2IEFtb2tlIFNob2RlcnUgU3RyZWV0IEFydW5hIElrb3JvZHUiLCJzdGF0ZSI6IkxhZ29zIiwiY291bnRyeSI6Ik5pZ2VyaWEifSwiaXNBdXRob3JpemVkIjp0cnVlLCJqb2luZWRfZGF0ZSI6IjIwMTgtMDktMThUMTc6NTA6MzUuMDAwWiIsImxhc3RfbG9naW4iOiIyMDE4LTA5LTE4VDE3OjUwOjM1LjAwMFoiLCJib29rcyI6W10sIl9pZCI6IjViYTEzYWVlMTRiOWM3NzY0MzZmMDUxNSIsImZpcnN0X25hbWUiOiJDaGlrZSIsImxhc3RfbmFtZSI6Ik96dWx1bWJhIiwidGVsZXBob25lIjo4MTMxOTc2MzA2LCJlbWFpbCI6IkNoaWtlQGdnZnNzbWFpbC5jb20iLCJwYXNzd29yZCI6IiQyYiQxMCRzS2p3U1Vib0ZTYkFUdnp3eGR1S2V1azlPWE45LjdVdVBnNXBGMHJMdXQvODByUGpjT2guSyIsIl9fdiI6MCwiaWF0IjoxNTM3NDQ3ODg0fQ.nZWpUONpSpANEUfWzOnRKjKZv1b1aSYAV2Z3RKKoQLA"
+}
+```
+
+Authorization Header
+
+> Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZGRyZXNzIjp7InN0cmVldCI6IjE2IEFtb2tlIFNob2RlcnUgU3RyZWV0IEFydW5hIElrb....
+
+###

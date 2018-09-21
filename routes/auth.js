@@ -20,7 +20,7 @@ router.post("/login", function(req, res) {
       }
       // generate a web token for the user
       const token = jwt.sign(user.toJSON(), process.env.JWT_SECRET);
-      return res.json({ user, token: "JWT " + token });
+      return res.json({ user, token: "Bearer " + token });
     });
   })(req, res);
 });

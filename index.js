@@ -34,8 +34,8 @@ app.use(function(err, req, res, next) {
 // ROUTES
 app.use("/auth", auth);
 app.use("/user", passport.authenticate("jwt", { session: false }), user);
-// app.use("/books", passport.authenticate("jwt", { session: false }), book);
-app.use("/books", book);
+app.use("/books", passport.authenticate("jwt", { session: false }), book);
+// app.use("v1/books", book);
 
 app.listen(3000);
 
