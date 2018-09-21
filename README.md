@@ -20,7 +20,7 @@ This an Rest API for a bookstore, with mobile applications in the pipeline. The 
 
 ## PROJECT STRUCTURE
 
-```
+```.env
 Project Root/
 │
 ├── functions/
@@ -190,8 +190,9 @@ Http Request
 > GET <http://localhost:3000/books/>
 
 Query Parameters
-| Parameters | Type | Description |
-| :--------: | :----: | :-------------------------------------------------: |
+
+|  Parameters   |  Type  |         Description |
+| :-----------: | :----: | ------------------: |
 | Authorization | Header | Authenticated Token |
 
 Sample Response
@@ -226,10 +227,11 @@ Http Request
 > GET <http://localhost:3000/books/:id>
 
 Query Parameters
-| Parameters | Type | Description |
-| :--------: | :----: | :-------------------------: |
-| Authorization | Header | Authenticated Token |
-| id | String | Unique ID of Book(required) |
+
+|  Parameters   |  Type  |         Description         |
+| :-----------: | :----: | :-------------------------: |
+| Authorization | Header |     Authenticated Token     |
+|      id       | String | Unique ID of Book(required) |
 
 Sample Response
 
@@ -265,15 +267,16 @@ Http Request
 > POST <http://localhost:3000/books/create>
 
 Query Parameters
-| Parameters | Type | Description |
-| :--------: | :----: | :----------------------------------: |
-| authorization | Header | Authenticated Token |
-| title | String | Book title (required) |
-| summary | String | Summary of the Book (required) |
-| cover | String | Book Cover(jpg, pdf, png | required) |
-| rating | Number | Users rating(required) |
+
+|   Parameters   |  Type  |          Description           |
+| :------------: | :----: | :----------------------------: |
+| authorization  | Header |      Authenticated Token       |
+|     title      | String |     Book title (required)      |
+|    summary     | String | Summary of the Book (required) |
+|     cover      | String |    Book Cover(jpg, pdf, png    | required) |
+|     rating     | Number |     Users rating(required)     |
 | date_published | String | Publish date of Book(required) |
-| genre | String | Book genre(required) |
+|     genre      | String |      Book genre(required)      |
 
 Sample Response
 
@@ -307,16 +310,17 @@ Http Request
 > POST <http://localhost:3000/books/update/:id>
 
 Query Parameters
-| Parameters | Type | Description |
-| :--------: | :----: | :----------------------------------: |
-| authorization | Header | Authenticated Token |
-| id | String | Unique ID of Book (required) |
-| title | String | Book title (required) |
-| summary | String | Summary of the Book (required) |
-| cover | String | Book Cover(jpg, pdf, png | required) |
-| rating | Number | Users rating(required) |
+
+|   Parameters   |  Type  |          Description           |
+| :------------: | :----: | :----------------------------: |
+| authorization  | Header |      Authenticated Token       |
+|       id       | String |  Unique ID of Book (required)  |
+|     title      | String |     Book title (required)      |
+|    summary     | String | Summary of the Book (required) |
+|     cover      | String |    Book Cover(jpg, pdf, png    | required) |
+|     rating     | Number |     Users rating(required)     |
 | date_published | String | Publish date of Book(required) |
-| genre | String | Book genre(required) |
+|     genre      | String |      Book genre(required)      |
 
 Sample Response
 
@@ -350,10 +354,11 @@ Http Request
 > DELETE <http://localhost:3000/books/delete/:id>
 
 Query Parameters
-| Parameters | Type | Description |
-| :----------: | :----: | :---------------------------: |
-| Authorization | Header | Authenticated Token |
-| id | String | Unique ID of Book (required) |
+
+|  Parameters   |  Type  |         Description          |
+| :-----------: | :----: | :--------------------------: |
+| Authorization | Header |     Authenticated Token      |
+|      id       | String | Unique ID of Book (required) |
 
 Sample Response
 
