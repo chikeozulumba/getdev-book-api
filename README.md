@@ -380,7 +380,3 @@ Testing was implemeted with `mocha` and `chai` and can be carried out by running
 ## Contributing
 
 Please feel free to fork this package and contribute by submitting a pull request to enhance the functionalities.
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
