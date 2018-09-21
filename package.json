@@ -8,7 +8,7 @@
         "start": "nodemon index.js"
     },
     "engines": {
-        "node": "10.11.1"
+        "node": "8.12.0"
     },
     "author": "Chike Ozulumba",
     "license": "MIT",
