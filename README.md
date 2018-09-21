@@ -227,7 +227,7 @@ Http Request
 
 Query Parameters
 | Parameters | Type | Description |
-| :--------: | :----: | :-------------------------------------------------: |
+| :--------: | :----: | :-------------------------: |
 | Authorization | Header | Authenticated Token |
 | id | String | Unique ID of Book(required) |
 
@@ -266,8 +266,8 @@ Http Request
 
 Query Parameters
 | Parameters | Type | Description |
-| :--------: | :----: | :-------------------------------------------------: |
-| Authorization | Header | Authenticated Token |
+| :--------: | :----: | :----------------------------------: |
+| authorization | Header | Authenticated Token |
 | title | String | Book title (required) |
 | summary | String | Summary of the Book (required) |
 | cover | String | Book Cover(jpg, pdf, png | required) |
@@ -308,15 +308,15 @@ Http Request
 
 Query Parameters
 | Parameters | Type | Description |
-| :--------: | :----: | :-------------------------------------------------: |
-| Authorization | Header | Authenticated Token |
+| :--------: | :----: | :----------------------------------: |
+| authorization | Header | Authenticated Token |
 | id | String | Unique ID of Book (required) |
-| title | String | Book title |
-| summary | String | Summary of the Book |
+| title | String | Book title (required) |
+| summary | String | Summary of the Book (required) |
 | cover | String | Book Cover(jpg, pdf, png | required) |
-| rating | Number | Users rating |
-| date_published | String | Publish date of Book |
-| genre | String | Book genre |
+| rating | Number | Users rating(required) |
+| date_published | String | Publish date of Book(required) |
+| genre | String | Book genre(required) |
 
 Sample Response
 
@@ -351,7 +351,7 @@ Http Request
 
 Query Parameters
 | Parameters | Type | Description |
-| :--------: | :----: | :-------------------------------------------------: |
+| :----------: | :----: | :---------------------------: |
 | Authorization | Header | Authenticated Token |
 | id | String | Unique ID of Book (required) |
 
