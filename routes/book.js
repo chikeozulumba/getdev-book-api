@@ -137,13 +137,13 @@ router.post("/update/:id", function(req, res, next) {
             if (err) {
               return res.status(400).json({
                 saved: false,
-                message: `Book could not be saved.`,
+                message: `Book could not be updated.`,
                 error: err
               });
             } else {
               return res
                 .status(200)
-                .json({ saved: true, message: `Book saved.`, docs });
+                .json({ updated: true, message: `Book updated.`, docs });
             }
           });
         }
@@ -153,17 +153,22 @@ router.post("/update/:id", function(req, res, next) {
 });
 
 /* DELETE Book By ID. */
-router.get("/delete/:id", function(req, res, next) {
+router.delete("/delete/:id", function(req, res, next) {
   let book_id = req.params.id;
   Book.findByIdAndDelete(book_id, function(err, docs) {
     if (err) {
       return res.status(400).json({
-        message: `Book not found.`,
+        message: `An error occured.`,
         error: err,
         deleted: false
       });
+    } else if (docs === null) {
+      return res.status(400).json({
+        message: `Book not found.`,
+        deleted: false
+      });
     } else {
-      return res.status(200).json({ saved: true, deleted: true });
+      return res.status(200).json({ docs, bookId: book_id, deleted: true });
     }
   });
 });
