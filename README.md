@@ -273,7 +273,7 @@ Query Parameters
 | authorization  | Header |      Authenticated Token       |
 |     title      | String |     Book title (required)      |
 |    summary     | String | Summary of the Book (required) |
-|     cover      | String |    Book Cover(jpg, pdf, png    | required) |
+|     cover      | String |   Book Cover(jpg, pdf, png)    |
 |     rating     | Number |     Users rating(required)     |
 | date_published | String | Publish date of Book(required) |
 |     genre      | String |      Book genre(required)      |
