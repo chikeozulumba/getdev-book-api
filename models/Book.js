@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const conn = require("../functions/db");
 const moment = require("moment");
 const Schema = mongoose.Schema;
 

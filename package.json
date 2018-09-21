@@ -1,30 +1,36 @@
 {
-  "name": "book-api",
-  "version": "0.0.1",
-  "description": "A light API for book and article management",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Chike Ozulumba",
-  "license": "MIT",
-  "dependencies": {
-    "bcrypt": "^3.0.0",
-    "body-parser": "^1.18.3",
-    "email-validator": "^2.0.4",
-    "express": "^4.16.3",
-    "g": "^2.0.1",
-    "joi": "^13.6.0",
-    "jsonwebtoken": "^8.3.0",
-    "moment": "^2.22.2",
-    "mongoose": "^5.2.15",
-    "morgan": "^1.9.1",
-    "nodemon": "^1.18.4",
-    "passport": "^0.4.0",
-    "passport-jwt": "^4.0.0",
-    "passport-local": "^1.0.0"
-  },
-  "devDependencies": {
-    "dotenv": "^6.0.0"
-  }
+    "name": "book-api",
+    "version": "0.0.1",
+    "description": "A light API for book and article management",
+    "main": "index.js",
+    "scripts": {
+        "test": "mocha -- tests/*.js"
+    },
+    "author": "Chike Ozulumba",
+    "license": "MIT",
+    "dependencies": {
+        "bcrypt": "^3.0.0",
+        "body-parser": "^1.18.3",
+        "cors": "^2.8.4",
+        "email-validator": "^2.0.4",
+        "express": "^4.16.3",
+        "g": "^2.0.1",
+        "joi": "^13.6.0",
+        "jsonwebtoken": "^8.3.0",
+        "moment": "^2.22.2",
+        "mongoose": "^5.2.15",
+        "morgan": "^1.9.1",
+        "nodemon": "^1.18.4",
+        "passport": "^0.4.0",
+        "passport-jwt": "^4.0.0",
+        "passport-local": "^1.0.0"
+    },
+    "devDependencies": {
+        "chai": "^4.1.2",
+        "chai-http": "^4.2.0",
+        "dotenv": "^6.0.0",
+        "mocha": "^5.2.0",
+        "superagent": "^4.0.0-beta.5",
+        "supertest": "^3.3.0"
+    }
 }

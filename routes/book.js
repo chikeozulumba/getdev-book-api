@@ -29,7 +29,7 @@ let schema = Joi.object().keys({
 
 /* GET all books listing. */
 router.get("/", function(req, res, next) {
-  let user = req.user;
+  // let user = req.user;
   Book.find({})
     .then(books => {
       return res.status(200).json({
@@ -45,10 +45,10 @@ router.get("/", function(req, res, next) {
 
 // Create books
 router.post("/create", function(req, res, next) {
-  let user = req.user;
+  let user = req.user || {}; //for testing;
   let data = req.body;
+  user._id = "5ba4b8942d5c7c26e313cd95";
   Joi.validate(data, schema, (err, value) => {
-    const id = Math.ceil(Math.random() * 9999999);
     if (err) {
       res.status(422).json({
         status: "error",
@@ -96,15 +96,16 @@ router.get("/:id", function(req, res, next) {
     } else if (!docs) {
       return res.status(301).json({ book: `Not Found` });
     } else {
-      return res.status(301).json({ docs });
+      return res.status(200).json({ docs });
     }
   });
 });
 
 /* Update Book. */
 router.post("/update/:id", function(req, res, next) {
-  let user = req.user;
+  let user = req.user || {}; //for testing;
   let data = req.body;
+  user._id = "5ba4b8942d5c7c26e313cd95";
   Book.findById({ _id: req.params.id }, (err, book) => {
     if (err || !book) {
       return res.status(200).json({

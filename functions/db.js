@@ -3,7 +3,8 @@ const db_string_query = `mongodb://${process.env.MLAB_USERNAME}:${
   process.env.MLAB_PASSWORD
 }@ds161092.mlab.com:61092/getdev`;
 
-module.exports = mongoose.connect(
+mongoose.set("useCreateIndex", true);
+mongoose.connect(
   db_string_query,
   {
     useNewUrlParser: true,
@@ -11,4 +12,5 @@ module.exports = mongoose.connect(
     connectTimeoutMS: 30000
   }
 );
-mongoose.set("useCreateIndex", true);
+let db = mongoose.connection;
+module.exports = db;
